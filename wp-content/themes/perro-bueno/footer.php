@@ -11,26 +11,41 @@
 
 ?>
 
-	</div><!-- #content -->
-
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'perro-bueno' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'perro-bueno' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'perro-bueno' ), 'perro-bueno', '<a href="https://federicomartin.net">Federico Martín</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
-
 <?php wp_footer(); ?>
+
+    <!-- Start footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer__hash col-12 col-md-4">
+                    <a href="#">#tuperroalcole</a>
+                    <a href="#">#mientrastutrabajas</a>
+                    <a href="#">#perrobueno.es</a>
+                </div>
+                <div class="footer__phone col-12 col-md-4">
+                    <span class="icon-phone">627 74 19 47</span>
+                </div>
+                <div class="footer__secondary-nav col-md-4">
+                    <div class="footer__secondary-nav__wrapper">
+                        <li><a href="index.php" class="primary-nav__active">Home</a></li>
+                        <li><a href="guarderia.php">Guarderia</a></li>
+                        <li><a href="adiestramiento.php">Adiestramiento</a></li>
+                        <li><a href="tarifas.php">Tarifas</a></li>
+                        <li><a href="contacto.php">Contacto</a></li>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="footer__date">
+                <span class="section-footer__text">Copyright &copy; <?php echo date('Y'); ?> All rights reserved.</span>
+            </div>
+    </footer>
+    <!-- End footer -->
+
+<!-- build:js /assets/scripts/App.js -->
+<script src="<?php bloginfo('template_directory'); ?>/assets/scripts/App.js"></script>
+<!-- endbuild -->
+<script src="<?php bloginfo('template_directory'); ?>/assets/scripts/lightbox.js"></script>
 
 </body>
 </html>
