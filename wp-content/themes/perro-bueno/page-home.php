@@ -3,6 +3,17 @@
     Template Name: Home Page
  */
 
+//Advanced variables
+$imagen_principal = get_field('imagen_principal');
+$titulo_principal = get_field('titulo');
+$subtitulo_principal = get_field('subtitulo');
+$titulo_servicios = get_field('titulo_servicios');
+$contenido_servicios = get_field('contenido_servicios');
+$imagen_video = get_field('imagen_video');
+$titulo_video = get_field('titulo_video');
+$video = get_field('video');
+$titulo_galeria = get_field('titulo_galeria');
+
 get_header(); ?>
 
 <!-- Start Hero -->
@@ -13,13 +24,13 @@ get_header(); ?>
         <img srcset="assets/images/hero--smaller.jpg 640w" alt="main" class="large-hero__image">
     </picture> -->
         <div class="large-hero__img-wrapper">
-            <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/perro_56_2.png" alt="" class="large-hero__image">
+            <img src="<?php echo $imagen_principal['url']; ?>" alt="<?php echo $imagen_principal['alt']; ?>" class="large-hero__image">
         </div>
         <div class="large-hero__text-content">
             <div class="container">
                 <div class="large-hero__fix">   
-                    <h1 class="large-hero__title">Bienvenido a PERROBUENO Madrid</h1>
-                    <p class="large-hero__description">Tu perro al cole!</p>
+                    <h1 class="large-hero__title"><?php echo $titulo_principal; ?></h1>
+                    <p class="large-hero__description"><?php echo $subtitulo_principal; ?></p>
                 </div>
             </div>
         </div>
@@ -29,60 +40,27 @@ get_header(); ?>
     <!-- Start Services -->
     <main class="services page-section" id="services">
         <div class="container">
-            <h2 class="title">Servicios</h2>
-            <p>PerroBueno fue creado por amantes de los animales para darles un servicio personalizado. En nuestras instalaciones no verás a tu perro encerrado, es un lugar especial para que disfruten mientras tú realizas tus obligaciones o te vas a tus vacaciones deseadas y no puedes llevarle contigo. Contamos con un lugar apropiado para poder  tener a los perros como en casa, con  espacio suficiente e instalaciones preparadas para todo tipo de perros (piscina incluida en verano). </p>
-            <p class="services__parrafo">Sólo contamos con un grupo muy limitado de perros en nuestra Guardería de Día, esto hace que el trato con  cada uno de los ellos sea 100% personalizado. La Guardería de Día es una alternativa al paseador convencional, ya que los paseos son  más largos evitando las horas que tu mejor amigo se encuentra solo en casa, así  mejora  su estado físico por falta de ejercicio y calma la ansiedad  por aburrimiento. No dudes en llamarnos con cualquier duda o inquietud que tengas. <br><br> <span class="blue fz-2">Nuestra Guardería de Día es novedosa en  Madrid  y nuestros huéspedes están más que encantados!</span></p>
+            <h2 class="title"><?php echo $titulo_servicios; ?></h2>
+            <div class="marginb-3">
+                <?php echo $contenido_servicios; ?>    
+            </div>
+            
             
             <div class="row">
+               <?php $loop =  new WP_Query(array('post_type' => 'cajas_servicio', 'orderby' => 'post_id', 'order' => 'ASC'));?>
+               
+               <?php while ($loop -> have_posts() ) : $loop -> the_post(); ?>
+               
                 <div class="services__item--content col-md-6 col-lg-4">
-                    <a href="guarderia.php" class="services__item--link">
+                    <a href="" class="services__item--link">
                         <article class="services__item">
-                            <span class="icon-home services__icon"></span>
-                            <h3 class="services__title">Guarderia de día</h3>
+                            <span class="<?php the_field('icon_servicios'); ?> services__icon"></span>
+                            <h3 class="services__title"><?php the_title(); ?></h3>
                         </article>
                     </a>
                 </div>
                 
-                <div class="services__item--content col-md-6 col-lg-4">
-                    <a href="adiestramiento.php" class="services__item--link">
-                        <article class="services__item">
-                            <span class="icon-graduation-cap services__icon"></span>
-                            <h3 class="services__title">Adiestramiento profesional</h3>    
-                        </article>
-                    </a>
-                </div>
-                
-                <div class="services__item--content col-md-6 col-lg-4">
-                    <a href="tarifas.php" class="services__item--link">
-                        <article class="services__item">
-                            <span class="icon-eur services__icon"></span>
-                            <h3 class="services__title">Tarifas</h3>
-                        </article>
-                    </a>
-                </div>
-                
-                <div class="services__item--content col-md-6 col-lg-4">
-                    <a href="http://www.bigvete.es/" class="services__item--link" target="_blank">
-                        <article class="services__item">
-                            <span class="icon-hospital-o services__icon"></span>
-                            <h3 class="services__title">Veterinario a domicilio <span class="red">bigvete.es</span> </h3>
-                        </article>
-                    </a>
-                </div>
-                
-                <div class="services__item--content col-md-6 col-lg-4">
-                    <article class="services__item">
-                        <span class="icon-sun-o services__icon"></span>
-                        <h3 class="services__title">Campamento de&nbsp;verano</h3>    
-                    </article>
-                </div>
-                
-                <div class="services__item--content col-md-6 col-lg-4">
-                    <article class="services__item">
-                        <span class="icon-life-ring services__icon"></span>
-                        <h3 class="services__title">Piscina</h3>
-                    </article>
-                </div>
+                <?php endwhile; ?>
             </div>
         </div>      
     </main>
@@ -92,13 +70,13 @@ get_header(); ?>
     <section class="know-us page-section" id="services">
         <div class="know-us__filter">
             <div class="know-us__img-wrapper">
-                <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/perro_prueba.jpg" alt="">
+                <img src="<?php echo $imagen_video['url']; ?>" alt="<?php echo $imagen_video['alt']; ?>">
             </div>
         </div>
         <div class="container know-us__content-wrapper">
-            <h2 class="title title--smaller">Conocenos un poco mas...</h2>
+            <h2 class="title title--smaller"><?php echo $titulo_video; ?></h2>
             <div class="know-us__video-wrapper">
-                <iframe src="https://www.youtube.com/embed/yPsPWXjjxhk?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/<?php echo $video; ?>?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
         </div>      
     </section>
@@ -107,27 +85,19 @@ get_header(); ?>
     <!-- Start gallery -->
     <section class="gallery page-section" id="gallery">
         <div class="container">
-            <h2 class="title">Nuestros Amigos!</h2>
+            <h2 class="title"><?php echo $titulo_galeria; ?></h2>
             <div class="row">
                
+               
+               <?php $loop =  new WP_Query(array('post_type' => 'galeria_principal', 'orderby' => 'post_id', 'order' => 'ASC'));?>
+               
+               <?php while ($loop -> have_posts() ) : $loop -> the_post(); ?>
+               
                 <div class="gallery__item col-md-6 col-lg-4 gallery-reveal">
-                    <a href="<?php bloginfo('stylesheet_directory'); ?>/assets/images/perro_7.jpg" data-lightbox="image-1" data-title="My caption"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/perro_7.jpg" alt=""></a>
+                    <a href="<?php the_post_thumbnail_url(); ?>" data-lightbox="image-1" data-title="My caption"><img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>"></a>
                 </div>
-                <div class="gallery__item col-md-6 col-lg-4 gallery-reveal">
-                    <a href="<?php bloginfo('stylesheet_directory'); ?>/assets/images/perro_8.jpg" data-lightbox="image-1" data-title="My caption"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/perro_8.jpg" alt=""></a>
-                </div>
-                <div class="gallery__item col-md-6 col-lg-4 gallery-reveal">
-                    <a href="<?php bloginfo('stylesheet_directory'); ?>/assets/images/perro_3.jpg" data-lightbox="image-1" data-title="My caption"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/perro_3.jpg" alt=""></a>
-                </div>
-                <div class="gallery__item col-md-6 col-lg-4 gallery-reveal">
-                    <a href="<?php bloginfo('stylesheet_directory'); ?>/assets/images/perro_4.jpg" data-lightbox="image-1" data-title="My caption"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/perro_4.jpg" alt=""></a>
-                </div>
-                <div class="gallery__item col-md-6 col-lg-4 gallery-reveal">
-                    <a href="<?php bloginfo('stylesheet_directory'); ?>/assets/images/perro_5.jpg" data-lightbox="image-1" data-title="My caption"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/perro_5.jpg" alt=""></a>
-                </div>
-                <div class="gallery__item col-md-6 col-lg-4 gallery-reveal">
-                    <a href="<?php bloginfo('stylesheet_directory'); ?>/assets/images/perro_6.jpg" data-lightbox="image-1" data-title="My caption"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/perro_6.jpg" alt=""></a>
-                </div>
+                
+                <?php endwhile; ?>
             </div>
         </div>      
     </section>
