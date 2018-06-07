@@ -13,6 +13,11 @@ $imagen_video = get_field('imagen_video');
 $titulo_video = get_field('titulo_video');
 $video = get_field('video');
 $titulo_galeria = get_field('titulo_galeria');
+$titulo_titulacion = get_field('titulo_titulacion');
+$contenido_titulacion = get_field('contenido_titulacion');
+$teaming_imagen = get_field('teaming_imagen');
+$contenido_teaming = get_field('contenido_teaming');
+$esterilizacion_teaming = get_field('esterilizacion_teaming');
 
 get_header(); ?>
 
@@ -108,14 +113,14 @@ get_header(); ?>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-6 titulacion__item">
-                    <h3 class="titulacion__item__title">Servicios brindados por profesionales con titulación oficial de la Federación Cinológica de&nbsp;España</h3>
-                    <p class="titulacion__item__parrafo">Veterinario de confianza a precios razonables donde puedes hacer tus consultas: <a href="http://www.bigvete.es/" target="_blank">www.bigvete.es</a></p>
+                    <h3 class="titulacion__item__title"><?php echo $titulo_titulacion ?></h3>
+                    <p class="titulacion__item__parrafo"><?php echo $contenido_titulacion ?></p>
                 </div>
                 
                 <div class="col-md-6 titulacion__item titulacion__item--red">
-                    <a href="https://www.teaming.net/esterilizacionaperrosppprescatados" target="_blank"><img class="titulacion__item__img" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/teaming.png" alt=""></a>
-                    <p class="titulacion__item__dona">Dona 1€ al mes a mi Grupo Teaming</p>
-                    <p class="titulacion__item__parrafo--azul"><a href="https://www.teaming.net/esterilizacionaperrosppprescatados" target="_blank">Esterilizacion a perros PPP</a></p>
+                    <a href="https://www.teaming.net/esterilizacionaperrosppprescatados" target="_blank"><img class="titulacion__item__img" src="<?php echo $teaming_imagen['url']; ?>" alt="<?php echo $teaming_imagen['alt']; ?>"></a>
+                    <p class="titulacion__item__dona"><?php echo $contenido_teaming; ?></p>
+                    <p class="titulacion__item__parrafo--azul"><?php echo $esterilizacion_teaming; ?></p>
                 </div>
             </div>
         </div>

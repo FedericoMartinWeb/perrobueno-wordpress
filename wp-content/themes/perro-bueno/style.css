@@ -10968,7 +10968,7 @@ html.lb-disable-scrolling {
 @media only screen and (min-width: 576px){
 
 .titulacion__item{
-            padding: 1.5rem !important
+            padding: 1.5rem;
     }
     }
 
