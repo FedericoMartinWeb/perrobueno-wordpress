@@ -1,10 +1,10 @@
 <?php
 /*
-* Template Name: Guarderia Page
+* Template Name: Adiestramiento Page
 */
-$foto_principal = get_field('foto_principal_guarderia');
-$titulo_principal_galeria = get_field('titulo_principal_guarderia');
-$contenido_guarderia = get_field('contenido_guarderia');
+$foto_principal_adiestramiento = get_field('foto_principal_adiestramiento');
+$titulo_principal_adiestramiento = get_field('titulo_principal_adiestramiento');
+$contenido_principal_adiestramiento = get_field('contenido_principal_adiestramiento');
 
 get_header();
 ?>
@@ -12,29 +12,29 @@ get_header();
     <!-- Start Hero -->
     <div class="large-hero">
         <div class="large-hero__img-wrapper large-hero__img-wrapper--internal">
-            <img src="<?php echo $foto_principal['url']; ?>" alt="<?php echo $foto_principal['alt']; ?>" class="large-hero__image large-hero__image--internal">
+            <img src="<?php echo $foto_principal_adiestramiento['url']; ?>" alt="<?php $foto_principal_adiestramiento['alt']; ?>" class="large-hero__image large-hero__image--internal">
         </div>
         <div class="large-hero__text-content">
             <div class="container">
-                <h1 class="large-hero__title large-hero__title--guarderia"><?php echo $titulo_principal_galeria; ?></h1>
+                <h1 class="large-hero__title large-hero__title--adiestra"><?php echo $titulo_principal_adiestramiento; ?></h1>
             </div>
         </div>
     </div>
     <!-- End Hero -->
     
-    <!-- Start guarderia -->
-    <section class="guarderia page-section page-section--no-padding-bottom">
+    <!-- Start Adiestramiento -->
+    <section class="adiestramiento page-section" id="adiestramiento">
         <div class="container">
-            <?php echo $contenido_guarderia; ?>
-        </div>      
+            <?php echo $contenido_principal_adiestramiento; ?>
+        </div>     
     </section>
-    <!-- End guarderia -->
+    <!-- End Adiestramiento -->
     
-    <!-- Start gallery -->
+     <!-- Start gallery -->
     <section class="gallery page-section page-section--no-padding-top" id="gallery">
         <div class="container">
             <div class="row">
-                <?php $loop =  new WP_Query(array('post_type' => 'galeria_guarderia', 'orderby' => 'post_id', 'order' => 'ASC'));?>
+                <?php $loop =  new WP_Query(array('post_type' => 'galeria_adiestra', 'orderby' => 'post_id', 'order' => 'ASC'));?>
                
                <?php while ($loop -> have_posts() ) : $loop -> the_post(); ?>
                

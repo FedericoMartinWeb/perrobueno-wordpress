@@ -23,11 +23,6 @@ get_header(); ?>
 
 <!-- Start Hero -->
     <div class="large-hero">
-    <!-- <picture>
-        <source srcset="assets/images/hero--medium.jpg 1380w" media="(min-width: 990px)">
-        <source srcset="assets/images/hero--small.jpg 990w" media="(min-width: 640px)"> 
-        <img srcset="assets/images/hero--smaller.jpg 640w" alt="main" class="large-hero__image">
-    </picture> -->
         <div class="large-hero__img-wrapper">
             <img src="<?php echo $imagen_principal['url']; ?>" alt="<?php echo $imagen_principal['alt']; ?>" class="large-hero__image">
         </div>
