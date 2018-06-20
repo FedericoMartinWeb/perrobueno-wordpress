@@ -50,9 +50,12 @@ get_header(); ?>
                <?php $loop =  new WP_Query(array('post_type' => 'cajas_servicio', 'orderby' => 'post_id', 'order' => 'ASC'));?>
                
                <?php while ($loop -> have_posts() ) : $loop -> the_post(); ?>
+               <?php $a_donde_quiere_redireccionar = get_field('a_donde_quiere_redireccionar');
+                     $elija_una_opcion = get_field('elija_una_opcion');
+                ?>
                
                 <div class="services__item--content col-md-6 col-lg-4">
-                    <a href="" class="services__item--link">
+                    <a href="<?php echo $a_donde_quiere_redireccionar; ?>" onclick="<?php echo $elija_una_opcion; ?>" class="services__item--link">
                         <article class="services__item">
                             <span class="<?php the_field('icon_servicios'); ?> services__icon"></span>
                             <h3 class="services__title"><?php the_title(); ?></h3>

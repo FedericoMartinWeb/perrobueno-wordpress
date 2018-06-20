@@ -18,21 +18,23 @@
         <div class="container">
             <div class="row">
                 <div class="footer__hash col-12 col-md-4">
-                    <a href="#">#tuperroalcole</a>
-                    <a href="#">#mientrastutrabajas</a>
-                    <a href="#">#perrobueno.es</a>
+                    <a href="#" onclick="return false;">#tuperroalcole</a>
+                    <a href="#" onclick="return false;">#mientrastutrabajas</a>
+                    <a href="#" onclick="return false;">#perrobueno.es</a>
                 </div>
                 <div class="footer__phone col-12 col-md-4">
                     <span class="icon-phone">627 74 19 47</span>
                 </div>
-                <div class="footer__secondary-nav col-md-4">
-                    <div class="footer__secondary-nav__wrapper">
-                        <li><a href="index.php" class="primary-nav__active">Home</a></li>
-                        <li><a href="guarderia.php">Guarderia</a></li>
-                        <li><a href="adiestramiento.php">Adiestramiento</a></li>
-                        <li><a href="tarifas.php">Tarifas</a></li>
-                        <li><a href="contacto.php">Contacto</a></li>
-                    </div>
+                <div class="footer__secondary-nav col-md-4">                    
+                    <?php
+                    
+                        wp_nav_menu(array(
+                            'theme_location' => 'menu-2',
+                            'container' => 'div',
+                            'container_class' => 'footer__secondary-nav__wrapper',
+                            'items_wrap' => '%3$s'
+                        ));
+                    ?>
                 </div>
             </div>
         </div>

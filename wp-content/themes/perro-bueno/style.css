@@ -70,7 +70,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
-
+li.current_page_item a,
+li.current_page_parent a{
+    color: red !important;
+}
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
@@ -9959,6 +9962,13 @@ p{
         }
     }
 
+@media only screen and (min-width: 1200px){
+
+.large-hero__title--guarderia{
+                padding: 0 75px !important;
+        }
+    }
+
 .large-hero__title--adiestra{
             font-size: 2.7rem;
         }
@@ -11338,3 +11348,4 @@ html.lb-disable-scrolling {
 textarea.wpcf7-form-control.wpcf7-textarea {
     display: block;
 }
+

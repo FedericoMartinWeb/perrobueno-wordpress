@@ -55,7 +55,7 @@
         <div class="container">
             <div class="site-header__logo">
                 <!--<div class="icon--clear-view-escapes site-header__logo__graphic">Clear View Escapes</div>-->
-                <a href="index.php"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/pb_logo.png" alt="" class="site-header__image"></a>
+                <a href="home"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/pb_logo.png" alt="" class="site-header__image"></a>
             </div>
 
             <div class="site-header__menu-icon">
