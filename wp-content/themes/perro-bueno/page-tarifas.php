@@ -37,8 +37,6 @@ get_header();
                 $texto_tarifas = get_field('texto_tarifas');
                 ?>
                
-               
-               
                <div class="adiestramiento__item--content col-md-6 col-lg-4">
                     <article class="adiestramiento__item">
                         <div class="adiestramiento__img--wrapper">
@@ -58,89 +56,6 @@ get_header();
                 </div>
                
                <?php endwhile; ?>
-                <div class="adiestramiento__item--content col-md-6 col-lg-4">
-                    <article class="adiestramiento__item">
-                        <div class="adiestramiento__img--wrapper">
-                            <h2 class="adiestramiento__title--box">Tarifas planas mensuales</h2>
-                            <h3 class="adiestramiento__title">Lunes a viernes</h3>
-                        </div>
-                        <div class="adiestramiento__copy-wrapper">
-                            <div class="adiestramiento__adapt">
-                                <h3 class="adiestramiento__precio">€300</h3>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                
-                <div class="adiestramiento__item--content col-md-6 col-lg-4">
-                    <article class="adiestramiento__item">
-                        <div class="adiestramiento__img--wrapper">
-                           <h2 class="adiestramiento__title--box">Tarifas planas mensuales</h2>
-                            <h3 class="adiestramiento__title">Lunes a jueves</h3>
-                        </div>
-                        <div class="adiestramiento__copy-wrapper">
-                            <div class="adiestramiento__adapt">
-                                <h3 class="adiestramiento__precio">€260</h3>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                
-                <div class="adiestramiento__item--content col-md-6 col-lg-4">
-                    <article class="adiestramiento__item">
-                        <div class="adiestramiento__img--wrapper">
-                            <h2 class="adiestramiento__title--box">Eventuales día suelto</h2>
-                            <h3 class="adiestramiento__title">Recogida y entrega en el día siempre que el domicilio se encuentre dentro del radio de&nbsp;la&nbsp;ruta</h3>
-                        </div>
-                        <div class="adiestramiento__copy-wrapper">
-                            <div class="adiestramiento__adapt">
-                                <h3 class="adiestramiento__precio">€25</h3>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                
-                <div class="adiestramiento__item--content col-md-6 col-lg-4">
-                    <article class="adiestramiento__item">
-                        <div class="adiestramiento__img--wrapper">
-                            <h2 class="adiestramiento__title--box">Estancias de verano/festivos</h2>
-                            <h3 class="adiestramiento__title">Tarifa diaria</h3>
-                        </div>
-                        <div class="adiestramiento__copy-wrapper">
-                            <div class="adiestramiento__adapt">
-                                <h3 class="adiestramiento__precio">€15</h3>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                
-                <div class="adiestramiento__item--content col-md-6 col-lg-4">
-                    <article class="adiestramiento__item">
-                        <div class="adiestramiento__img--wrapper">
-                            <h2 class="adiestramiento__title--box">Estancias de verano/festivos</h2>
-                            <h3 class="adiestramiento__title">Larga estancia mas de 20&nbsp;dias</h3>
-                        </div>
-                        <div class="adiestramiento__copy-wrapper">
-                            <div class="adiestramiento__adapt">
-                                <h3 class="adiestramiento__precio--consultar">Consultar</h3>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                
-                <div class="adiestramiento__item--content col-md-6 col-lg-4">
-                    <article class="adiestramiento__item">
-                        <div class="adiestramiento__img--wrapper">
-                            <h2 class="adiestramiento__title--box">Traslados</h2>
-                            <h3 class="adiestramiento__title">Ida y vuelta siempre que este dentro del radio de&nbsp;la&nbsp;ruta</h3>
-                        </div>
-                        <div class="adiestramiento__copy-wrapper">
-                            <div class="adiestramiento__adapt">
-                                <h3 class="adiestramiento__precio">€10</h3>
-                            </div>
-                        </div>
-                    </article>
-                </div>
             </div>
         </div>     
     </section>

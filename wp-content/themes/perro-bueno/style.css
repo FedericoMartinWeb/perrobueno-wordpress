@@ -11334,3 +11334,7 @@ html.lb-disable-scrolling {
 .marginb-3{
     margin-bottom: 3rem !important;
 }
+
+textarea.wpcf7-form-control.wpcf7-textarea {
+    display: block;
+}
