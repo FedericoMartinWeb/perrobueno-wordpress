@@ -11168,8 +11168,7 @@ html.lb-disable-scrolling {
 @media only screen and (min-width: 768px){
 
 .footer__phone{
-            padding: 0;
-            padding-top: .2rem;
+            padding: 1rem 0;
             font-size: .8rem
     }
             
@@ -11178,7 +11177,13 @@ html.lb-disable-scrolling {
                 top: 2px;
             }
     }
-
+@media only screen and (min-width: 992px){
+    .footer__phone{
+            padding: 0;
+            padding-top: .2rem;
+            font-size: .8rem
+    }  
+}
 .adiestramiento__disclaim{
         font-size: 1.7rem;
         font-weight: 300;

@@ -10,51 +10,44 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
-
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'perro-bueno' ); ?></h1>
-				</header><!-- .page-header -->
-
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'perro-bueno' ); ?></p>
-
-					<?php
-					get_search_form();
-
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'perro-bueno' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-							?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-					/* translators: %1$s: smiley */
-					$perro_bueno_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'perro-bueno' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$perro_bueno_archive_content" );
-
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+	<!-- Start Hero -->
+    <div class="large-hero">
+        <div class="large-hero__img-wrapper large-hero__img-wrapper--internal">
+            <img src="<?php echo $foto_principal_adiestramiento['url']; ?>" alt="<?php $foto_principal_adiestramiento['alt']; ?>" class="large-hero__image large-hero__image--internal">
+        </div>
+        <div class="large-hero__text-content">
+            <div class="container">
+                <h1 class="large-hero__title large-hero__title--adiestra">Error 404 Not Found</h1>
+            </div>
+        </div>
+    </div>
+    <!-- End Hero -->
+    
+    <!-- Start Adiestramiento -->
+    <section class="adiestramiento page-section" id="adiestramiento">
+        <div class="container">
+            <h3 class="red">Woops! No pudimos encontrar la pagina que estas buscando!</h3>
+        </div>     
+    </section>
+    <!-- End Adiestramiento -->
+    
+     <!-- Start gallery -->
+    <section class="gallery page-section page-section--no-padding-top" id="gallery">
+        <div class="container">
+            <div class="row">
+                <?php $loop =  new WP_Query(array('post_type' => 'galeria_adiestra', 'orderby' => 'post_id', 'order' => 'ASC'));?>
+               
+               <?php while ($loop -> have_posts() ) : $loop -> the_post(); ?>
+               
+                <div class="gallery__item col-md-6 col-lg-4 gallery-reveal">
+                    <a href="<?php the_post_thumbnail_url(); ?>" data-lightbox="image-1" data-title="My caption"><img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>"></a>
+                </div>
+                
+                <?php endwhile; ?>
+            </div>
+        </div>      
+    </section>
+    <!-- End gallery -->
 
 <?php
 get_footer();
