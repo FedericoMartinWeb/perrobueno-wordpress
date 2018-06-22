@@ -11354,3 +11354,6 @@ textarea.wpcf7-form-control.wpcf7-textarea {
     display: block;
 }
 
+img{
+    object-fit: cover;
+}
