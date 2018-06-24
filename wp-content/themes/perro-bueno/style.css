@@ -11357,3 +11357,12 @@ textarea.wpcf7-form-control.wpcf7-textarea {
 img{
     object-fit: cover;
 }
+
+.mensajes{
+    text-align: center;
+    margin-top: 1rem;
+    background-color: green;
+    color: white;
+    padding: 1rem;
+    display: none;
+}

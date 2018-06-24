@@ -36,9 +36,26 @@ get_header();
             <div class="row">
                     
                 <div class="contacto__form--wrapper col-sm-6">
-                    <form class="contacto__form">
-                        <?php echo $formulario_contacto; ?>
+                    <form class="contacto__form" action="<?php echo get_stylesheet_directory_uri(); ?>/formulario.php" method="post" name="form1" id="formulario_contacto">
+                        <div class="form-group">
+                            <input type="text" class="form-control contacto__form__input" aria-describedby="emailHelp" placeholder="Nombre" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control contacto__form__input" placeholder="Email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control contacto__form__input" id="exampleTextarea" rows="6" placeholder="Mensaje" name="mensaje" required></textarea>
+                        </div>
+                        <input type="submit" value="Enviar" class="contacto__form__button" name="submit" />
                     </form>
+                    
+                    <span id="success_message" class="mensajes"></span>
+                        <script>
+                            if(window.location.href == "http://localhost:8888/pbwordpress/contacto/#formulario_contacto"){
+                                document.getElementById("success_message").style.display = "block";
+                                document.getElementById("success_message").innerHTML = "Mensaje enviado con Exito!";
+                            }
+                        </script>
                 </div>
 
                 <div class="contacto__aside col-sm-6">
