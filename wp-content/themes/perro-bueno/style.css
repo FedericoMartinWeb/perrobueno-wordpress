@@ -11366,3 +11366,12 @@ img{
     padding: 1rem;
     display: none;
 }
+
+.bigvete-logo{
+    background-image: url('/pbwordpress/wp-content/themes/perro-bueno/assets/images/logorojo.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    height: 55px;
+    margin-bottom: 20px;
+}

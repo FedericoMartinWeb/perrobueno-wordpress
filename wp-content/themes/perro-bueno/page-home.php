@@ -57,7 +57,7 @@ get_header(); ?>
                 <div class="services__item--content col-md-6 col-lg-4">
                     <a href="<?php echo $a_donde_quiere_redireccionar; ?>" onclick="<?php echo $elija_una_opcion; ?>" class="services__item--link">
                         <article class="services__item">
-                            <span class="<?php the_field('icon_servicios'); ?> services__icon"></span>
+                            <div class="<?php the_field('icon_servicios'); ?> services__icon"></div>
                             <h3 class="services__title"><?php the_title(); ?></h3>
                         </article>
                     </a>
