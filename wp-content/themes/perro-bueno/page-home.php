@@ -19,6 +19,7 @@ $teaming_imagen = get_field('teaming_imagen');
 $contenido_teaming = get_field('contenido_teaming');
 $esterilizacion_teaming = get_field('esterilizacion_teaming');
 
+
 get_header(); ?>
 
 <!-- Start Hero -->
@@ -52,10 +53,11 @@ get_header(); ?>
                <?php while ($loop -> have_posts() ) : $loop -> the_post(); ?>
                <?php $a_donde_quiere_redireccionar = get_field('a_donde_quiere_redireccionar');
                      $elija_una_opcion = get_field('elija_una_opcion');
+                     $abrir_en_pestaña = get_field('abrir_en_pestaña');
                 ?>
                
                 <div class="services__item--content col-md-6 col-lg-4">
-                    <a href="<?php echo $a_donde_quiere_redireccionar; ?>" onclick="<?php echo $elija_una_opcion; ?>" class="services__item--link">
+                    <a href="<?php echo $a_donde_quiere_redireccionar; ?>" onclick="<?php echo $elija_una_opcion; ?>" class="services__item--link" target="<?php echo $abrir_en_pestaña; ?>">
                         <article class="services__item">
                             <div class="<?php the_field('icon_servicios'); ?> services__icon"></div>
                             <h3 class="services__title"><?php the_title(); ?></h3>

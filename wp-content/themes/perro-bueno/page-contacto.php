@@ -6,7 +6,6 @@ $foto_principal_contacto = get_field('imagen_principal_contacto');
 $titulo_principal_contacto = get_field('titulo_principal_contacto');
 $titulo_seccion_contacto = get_field('titulo_seccion_contacto');
 $info_contacto = get_field('info_contacto');
-$formulario_contacto = get_field('formulario_contacto');
 
 get_header();
 ?>
